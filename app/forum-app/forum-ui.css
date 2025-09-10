@@ -816,6 +816,18 @@
   font-weight: 500;
 }
 
+/* 图片样式 */
+.thread-content img,
+.reply-content img,
+.sub-reply-content img {
+  max-width: 100%; /* 确保图片不超出容器宽度 */
+  height: auto; /* 保持图片比例 */
+  margin: 10px 0; /* 上下留出空白，避免贴紧文字 */
+  border-radius: 6px; /* 圆角边框 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 轻微阴影突出图片 */
+  display: block; /* 让图片单独占一行，避免和文字并排 */
+}
+
 .forum-link {
   color: #4e7ce8;
   text-decoration: none;
