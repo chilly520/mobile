@@ -491,6 +491,13 @@ class ForumUI {
     // 处理链接（如果有）
     formatted = formatted.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" class="forum-link">$1</a>');
 
+    // 处理图片链接（匹配常见图片格式）
+const imgRegex = /(https?:\/\/[^\s]+\.(jpg|jpeg|png|gif|webp|bmp))/gi;
+formatted = formatted.replace(imgRegex, (url) => {
+    // 生成带样式的图片标签，宽度100%且居中显示
+    return `<img src="${url}" style="width: 100%; display: block; margin: 8px auto; border-radius: 4px;" alt="图片">`;
+});
+
     // 处理@用户（如果有）
     formatted = formatted.replace(/@([^\s]+)/g, '<span class="mention">@$1</span>');
 
